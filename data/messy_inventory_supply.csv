@@ -1,0 +1,13 @@
+sku,last_restock_date,warehouse,supplier_name,stock_on_hand,reorder_level,unit_cost,lead_time_days,category,active_flag
+SKU-001,2025-01-05,WH-A,Acme Corp,125,40,22.5,7,Accessories,Y
+SKU-002,05/01/2025,WH-B,Northwind,80,35,"18,75",10,Components,Y
+SKU-003,2025/01/08,WH-A,Acme Corp,,25,9.5,5,Accessories,Y
+SKU-004,,WH-C,Global Parts,unknown,60,44.1,14,Hardware,N
+SKU-005,2025-01-11,WH-A,,210,90,11.2,3,Consumables,Y
+SKU-006,2025-01-11,WH-A,,210,90,11.2,3,Consumables,Y
+SKU-007,2025-01-13,WH-B,Northwind,15,20,105.0,twenty,Hardware,Y
+SKU-008,2025-01-14,WH-C,Acme Corp,0,10,5.75,4,Consumables,n
+SKU-009,2025-01-15,WH-A,Delta Supply,340,120,2.5,,Packaging,Y
+SKU-010,2025-01-16,WH-B,Global Parts,57,25,NaN,9,Components,Y
+SKU-011,2025-01-17, WH-C ,Delta Supply,410,150,3.2,6,Packaging,Y
+SKU-012,2025-01-18,WH-A,Acme Corp,95,30,8.0,5,,Y

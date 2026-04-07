@@ -1,0 +1,13 @@
+order_id,order_date,region,product_category,sales_amount,discount_pct,customer_name,status
+1001,2025-01-05,North,Electronics,1200,5,Asha,Delivered
+1002,2025-01-06,South,Furniture,850,10,Ravi,Delivered
+1003,2025/01/07,West,Office Supplies,230,,Meera,Pending
+1004,07-01-2025, East ,Electronics,"1,540",15,Arjun,Delivered
+1005,2025-01-09,North,,670,0,Diya,Cancelled
+1006,2025-01-10,South,Electronics,unknown,5,Kiran,Delivered
+1007,2025-01-10,South,Electronics,unknown,5,Kiran,Delivered
+1008,,West,Furniture,910,12,Sana,Returned
+1009,2025-01-12,North,Office Supplies,340,missing,,Delivered
+1010,2025-01-13,South,Electronics,1250,8,Vikram,Delivered
+1011,2025-01-14,West,Furniture,NaN,6,Priya,Pending
+1012,2025-01-15,East,Office Supplies,410,,Nikhil,Delivered

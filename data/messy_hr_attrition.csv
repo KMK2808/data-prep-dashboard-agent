@@ -1,0 +1,13 @@
+employee_id,join_date,department,location,age,monthly_salary,performance_rating,attrition,last_promotion_date,manager_name
+E001,2021-01-15,Data,Hyderabad,29,75000,4,No,2024-06-01,Anita
+E002,15/03/2020,BI,Bengaluru,34,"92,000",5,No,2023-11-10,Rohit
+E003,2022/07/08,Analytics, Pune ,27,68000,3,Yes,,Megha
+E004,,Data,Chennai,unknown,81000,4,No,2024-02-15,Anita
+E005,2023-04-18,BI,Hyderabad,31,,2,Yes,missing,
+E006,2023-04-18,BI,Hyderabad,31,,2,Yes,missing,
+E007,2024-01-03,Analytics,Bengaluru,twenty six,59000,3,No,2024-09-01,Rahul
+E008,2021-11-25,Data,Remote,45,120000,5,No,2022-12-10,Anita
+E009,2022-09-09,HR,Chennai,38,64000,,No,2023-08-08,Sonal
+E010,2020-06-30,Analytics,Remote,41,105000,4, yes ,2024-05-05,Rahul
+E011,2025-01-02,BI,Hyderabad,24,54000,3,No,,Rohit
+E012,2025-01-10,HR,,28,51000,4,No,2025-01-10,Sonal

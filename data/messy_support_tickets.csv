@@ -1,0 +1,13 @@
+ticket_id,created_at,resolved_at,priority,channel,agent_name,customer_tier,resolution_time_hours,satisfaction_score,status
+T001,2025-03-01 09:15,2025-03-01 13:10,High,Email,Rina,Gold,3.9,5,Closed
+T002,2025/03/01 10:00,2025/03/02 14:00,Medium,Chat,Amit,Silver,28,4,Closed
+T003,01-03-2025 11:30,,Critical,Phone,,Platinum,unknown,,Open
+T004,2025-03-02 08:45,2025-03-02 10:00,Low,Email,Nisha,Bronze,1.25,5,Closed
+T005,2025-03-02 09:10,2025-03-04 18:45,High,Chat,Rina,Gold,57.5,2,Closed
+T006,2025-03-03 12:20,2025-03-03 12:50,Low,Web,Arjun,Silver,0.5,4,Closed
+T007,2025-03-03 12:20,2025-03-03 12:50,Low,Web,Arjun,Silver,0.5,4,Closed
+T008,,2025-03-05 16:20,Medium,Phone,Meera,Gold,12,3,Closed
+T009,2025-03-05 14:40,2025-03-06 09:05,Medium,Email,NA,Silver,18.4,missing,Closed
+T010,2025-03-06 16:00,,High,Chat,Nisha,Platinum,NaN,,Pending
+T011,2025-03-07 10:10,2025-03-07 11:00,Critical,Phone,Rina,Gold,0.83,5,closed
+T012,2025-03-07 18:00,2025-03-08 10:15,High,Email,Amit,,16.25,4,Closed
