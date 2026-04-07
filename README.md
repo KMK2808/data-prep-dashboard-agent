@@ -1,39 +1,59 @@
 # Data Prep Dashboard Agent
 
-Data Prep Dashboard Agent is a flagship open-source analytics product that combines:
+![Hero Banner](docs/assets/hero-banner.png)
 
-- interactive data cleaning workbench
-- automatic dashboard generation
-- saved run artifacts for repeatable analysis
-- deploy-ready packaging with Docker
+An open-source analytics workspace for turning messy tabular data into dashboard-ready outputs.
 
-The app takes a messy CSV or Excel file, profiles its issues, applies both global and column-level cleaning rules, and produces a dashboard-ready dataset with exportable reports.
+Data Prep Dashboard Agent combines data cleaning, profiling, dashboard generation, and repeatable export workflows in one Streamlit application. It is designed as a flagship portfolio project for data engineering, analytics engineering, and BI-focused roles.
 
-## Why this project
+![Feature Tour](docs/assets/feature-tour.gif)
 
-This project is designed as a flagship portfolio piece for data engineering, analytics engineering, and BI-oriented roles. It sits between lightweight data utilities and a production-grade analytics product.
+## Why it stands out
 
-## Current features
+- Starts with raw CSV or Excel files instead of clean demo data.
+- Scores dataset health before analysis begins.
+- Supports both global cleaning rules and column-level actions.
+- Uses DuckDB-backed summaries to make dashboard generation feel fast and analytical.
+- Saves run artifacts so analysis is not trapped in a one-time UI session.
+- Ships with test data, unit tests, and Docker support.
 
-- Upload `.csv` or `.xlsx` data
-- Use a built-in sample dataset for quick demos
-- Profile rows, columns, missing values, duplicates, data types, outliers, and quality score
-- Apply rule-based cleaning:
-  - trim whitespace
-  - normalize missing markers
-  - convert numeric-like columns
-  - convert datetime-like columns
-  - drop empty rows
-  - drop duplicates
-  - lowercase text globally or per column
-  - optionally fill missing values with mean, median, mode, zero, or custom values
-  - rename or drop individual columns
-- Review raw vs cleaned previews
-- Generate KPI cards, drill-down charts, and DuckDB-powered summary tables
-- Save run artifacts locally in `reports/`
-- Download cleaned CSV and markdown summary report
-- Run unit tests
-- Launch with Docker
+## Core capabilities
+
+- Upload `.csv` and `.xlsx` datasets.
+- Profile missing values, duplicates, outliers, inferred types, and dataset quality score.
+- Apply cleaning rules such as trimming whitespace, normalizing missing markers, casting numeric or datetime columns, filling nulls, lowercasing text, renaming fields, and dropping low-value columns.
+- Compare raw and cleaned data side by side.
+- Build quick KPI views and configurable dashboards from cleaned data.
+- Save cleaned CSVs, markdown reports, and run metadata under `reports/`.
+- Test locally with sample messy datasets from retail, HR, support, and inventory domains.
+
+## Feature walkthrough
+
+1. Upload a raw dataset or start from one of the included messy sample files.
+2. Inspect the health score, missing values, inferred types, and outlier indicators.
+3. Apply global cleanup settings from the sidebar.
+4. Fine-tune individual columns with rename, type conversion, fill strategy, lowercase, and drop controls.
+5. Build charts from selected metrics, dimensions, and date fields.
+6. Export cleaned data and save repeatable run artifacts.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A["CSV / XLSX Input"] --> B["Streamlit UI"]
+    B --> C["Profiling Engine"]
+    B --> D["Cleaning Engine"]
+    C --> E["Quality Score + Column Diagnostics"]
+    D --> F["Cleaned DataFrame"]
+    F --> G["DuckDB Analytics Layer"]
+    G --> H["KPI Cards + Charts + Summary Tables"]
+    F --> I["CSV Export"]
+    E --> J["Markdown Report"]
+    D --> K["Run Metadata"]
+    I --> L["Saved Artifacts"]
+    J --> L
+    K --> L
+```
 
 ## Project structure
 
@@ -49,6 +69,14 @@ data-prep-dashboard-agent/
     ui.py
   data/
     sample_sales_messy.csv
+    messy_retail_orders.csv
+    messy_hr_attrition.csv
+    messy_support_tickets.csv
+    messy_inventory_supply.csv
+  docs/
+    assets/
+      hero-banner.png
+      feature-tour.gif
   reports/
   tests/
     test_final_engine.py
@@ -57,6 +85,17 @@ data-prep-dashboard-agent/
   requirements.txt
   README.md
 ```
+
+## Tech stack
+
+- Python
+- Streamlit
+- pandas
+- DuckDB
+- Plotly
+- Pillow
+- unittest
+- Docker
 
 ## Getting started
 
@@ -67,6 +106,8 @@ python -m venv .venv
 pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
+
+Open the app at `http://localhost:8501`.
 
 ## Run tests
 
@@ -81,26 +122,53 @@ docker build -t data-prep-dashboard-agent .
 docker run -p 8501:8501 data-prep-dashboard-agent
 ```
 
-## Sample workflow
+## Included sample datasets
 
-1. Upload a raw dataset or use the included sample file.
-2. Review profiling results and recommended next steps.
-3. Turn cleaning rules on or off from the sidebar.
-4. Inspect the cleaned preview and generated charts.
-5. Export the cleaned CSV and markdown report.
+- `data/sample_sales_messy.csv`
+- `data/messy_retail_orders.csv`
+- `data/messy_hr_attrition.csv`
+- `data/messy_support_tickets.csv`
+- `data/messy_inventory_supply.csv`
 
-## Next production upgrades
+These files include mixed date formats, duplicates, nulls, inconsistent casing, numeric text, placeholder values, and messy categories so the workflow can be tested realistically.
 
-- Add Pandera or Great Expectations validations
-- Persist runs in SQLite or Postgres
-- Add authentication and project workspaces
-- Export dashboard configs for Superset or Metabase
-- Add background jobs for scheduled profiling and alerting
+## Roadmap
 
-## Good next extensions
+### Phase 1: Product polish
+
+- Add richer chart layout controls and saved dashboard presets.
+- Improve error messaging for invalid type coercions and fill rules.
+- Add downloadable JSON summaries for every run.
+
+### Phase 2: Data quality depth
+
+- Integrate Pandera or Great Expectations.
+- Add schema drift checks and freshness rules.
+- Introduce anomaly flags and threshold alerts.
+
+### Phase 3: Persistence and collaboration
+
+- Persist runs in SQLite or Postgres.
+- Add authentication and project workspaces.
+- Add reusable transformation templates across datasets.
+
+### Phase 4: Analytics engineering expansion
+
+- Export curated outputs for Superset or Metabase.
+- Add dbt-ready model exports.
+- Add scheduled profiling jobs and notification hooks.
+
+## Why this is a strong portfolio project
+
+- It solves a real workflow instead of a single isolated feature.
+- It sits between data cleaning, BI, and analytics engineering.
+- It demonstrates product thinking, not just notebook analysis.
+- It is easy to demo quickly but still has a credible production path.
+
+## Future extensions
 
 - LLM explanations for detected data issues
 - natural-language chart generation
-- anomaly detection
-- schema drift alerts
-- dbt-ready model export
+- SQL editor over cleaned DuckDB tables
+- automated data contracts
+- team sharing and review workflows
